@@ -1,61 +1,54 @@
 # Politique de Confidentialité - Cyber Charging Experience
 
-**Dernière mise à jour : Octobre 2026**
+Dernière mise à jour : 5 octobre 2026
 
-Mikael / Naudclick ("nous", "notre", "nos") exploite l'application mobile **Cyber Charging Experience** ainsi que son application compagnon Wear OS. Cette page vous informe de nos politiques concernant la collecte, l'utilisation et la divulgation des données personnelles lorsque vous utilisez notre Service.
+La présente politique de confidentialité régit l'application mobile **Cyber Charging Experience** (ci-après "l'Application"), développée et éditée par **Naudclick** (contact : Naudclick.informatik@gmail.com).
 
-L'objectif principal de notre application est de fournir des statistiques détaillées sur votre batterie, des animations de charge et des alertes vocales, tout en garantissant le plus strict respect de votre vie privée.
-
+Nous accordons une importance capitale à la protection de votre vie privée et de vos données personnelles. Cette politique vous explique quelles données sont collectées, comment elles sont utilisées et comment vos droits sont respectés.
 ---
 
-## 1. Collecte et Utilisation des Données
+1. Données collectées et traitées
+L'Application fonctionne principalement en mode local sur votre appareil et ne transmet aucune donnée sensible à des serveurs tiers.
 
-L'application Cyber Charging Experience est conçue pour fonctionner de manière **locale et hors-ligne** autant que possible.
+Données de la batterie et du système : L'Application collecte des informations techniques relatives à l'état de votre batterie (niveau de charge, tension, température, courant en temps réel) afin de vous fournir des graphiques de métrologie et d'optimiser la charge.
 
-### A. Données de Batterie et de Télémétrie
-L'application collecte des statistiques matérielles sur votre batterie (niveau, tension, température, ampérage).
-**Où vont ces données ?** Toutes ces données de télémétrie sont stockées **exclusivement en local** sur votre appareil (dans la mémoire de votre téléphone via des fichiers de stockage interne et `SharedPreferences`). **Aucune donnée de télémétrie n'est envoyée vers nos serveurs ou sur Internet.**
+Statistiques d'utilisation des applications (UsageStats) : L'Application analyse localement le temps passé sur les applications de votre appareil afin de calculer et de vous présenter un rapport détaillé de la décharge de la batterie par application (faible style AccuBattery).
 
-### B. Autorisations Spécifiques et Sensibles
-Pour offrir ses fonctionnalités avancées, l'application requiert certaines autorisations spécifiques du système Android. Voici comment nous les utilisons :
+Contenu des notifications (Traitement local) : L'Application intercepte temporairement les métadonnées de vos notifications (nom de l'application, titre, contact) uniquement pour alimenter deux fonctionnalités locales :
 
-*   **Accès aux Notifications (`android.permission.BIND_NOTIFICATION_LISTENER_SERVICE`)** :
-    L'application lit vos notifications entrantes **uniquement** dans le but de déclencher les annonces vocales intelligentes (Cyber Voice) et les effets de lumière sur les bords de l'écran (Edge Lighting).
-    **Protection stricte :** Le contenu de vos notifications, l'identité de l'expéditeur et les messages sont traités **exclusivement en temps réel et en local** (dans la RAM de votre appareil). **Aucun message ou contenu de notification n'est enregistré, sauvegardé, partagé ou transmis sur Internet.**
-*   **Superposition sur d'autres applications (`SYSTEM_ALERT_WINDOW`)** :
-    Utilisée exclusivement pour afficher l'animation de charge, les statistiques et le widget flottant par-dessus l'écran de verrouillage ou les autres applications lorsque vous branchez votre appareil.
-*   **Accès aux statistiques d'utilisation (`PACKAGE_USAGE_STATS`)** :
-    Utilisé pour estimer avec précision la consommation de batterie par application pendant la décharge. Ces données d'utilisation restent strictement locales et ne sont jamais transmises à des tiers.
+L'affichage d'un effet lumineux de contour sur l'écran (Edge Lighting).
 
----
+La lecture vocale optionnelle des notifications par synthèse vocale (Cyber Voice).
+Aucun contenu de message ou de notification n'est enregistré, stocké ou transmis à l'extérieur de votre téléphone.
 
-## 2. Services Tiers
+Rapports de plantage (Crashlytics) : Si vous l'autorisez explicitement via les paramètres de l'application, des rapports d'erreur anonymes peuvent être collectés via Firebase (Google) pour nous aider à corriger les bugs et améliorer la stabilité. Vous pouvez désactiver ce partage à tout moment dans les paramètres.
 
-Bien que nous ne collections pas directement de données personnelles, l'application s'appuie sur des services tiers certifiés qui peuvent collecter des informations de diagnostic :
+2. Utilisation des autorisations sensibles (Permissions Android)
+Conformément aux règles de Google Play, voici l'utilisation précise des autorisations à haut risque demandées par l'Application :
 
-*   **Google Play Services & Google Play Billing** : Utilisés de manière sécurisée par Google pour traiter et gérer les achats intégrés (déverrouillage Premium / Mode VIP).
-*   **Firebase Crashlytics (Google)** : Utilisé pour recueillir des rapports de crash et d'erreurs anonymes (modèle de l'appareil, version du système d'exploitation, trace technique de l'erreur) afin de nous aider à diagnostiquer, corriger les bugs et améliorer la stabilité de l'application.
+Accès aux notifications (NotificationListenerService) : Nécessaire pour déclencher l'affichage visuel des notifications entrantes en mode veille (Edge Lighting) et pour permettre à l'assistant vocal de vous notifier des messages importants.
 
----
+Statistiques d'utilisation (PACKAGE_USAGE_STATS) : Nécessaire pour l'analyse de la consommation énergétique globale et par application.
 
-## 3. Sécurité des Données
+Affichage par-dessus les autres applications (SYSTEM_ALERT_WINDOW / Overlay) : Nécessaire pour afficher l'interface de verrouillage personnalisée pendant la charge et la pilule interactive (Cyber Island).
 
-La sécurité de vos données est notre priorité absolue. Puisque la quasi-totalité de vos données (historique de charge, préférences vocales, paramètres, santé de la batterie) ne quitte jamais votre appareil, elles sont intrinsèquement protégées par les mécanismes de sécurité et de sandboxing natifs d'Android.
+Ignorer l'optimisation de la batterie : Nécessaire pour maintenir le service de surveillance de la batterie et la protection thermique actifs en arrière-plan sans être interrompu par le mode Doze d'Android.
 
-## 4. Partage des Données
+3. Partage et sécurité des données
+Aucun partage externe : Vos données personnelles, statistiques d'utilisation et notifications ne sont ni vendues, ni louées, ni partagées avec des partenaires commerciaux ou publicitaires.
 
-Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers. Vos données restent les vôtres.
+Stockage local : Les historiques de charge, les paramètres et les configurations de l'application sont stockés de manière sécurisée et exclusivement sur la mémoire interne de votre appareil.
 
-## 5. Droit à l'oubli et suppression
+4. Vos droits (RGPD)
+Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un contrôle total sur vos données :
 
-Toutes les données générées par l'application étant stockées localement sur votre téléphone, vous avez le contrôle total sur leur suppression. Vous pouvez effacer l'intégralité de vos données de télémétrie, historiques et préférences à tout moment en :
-1. Vidant les données de l'application via les paramètres Android (`Paramètres > Applications > Cyber Charging > Stockage > Effacer les données`).
-2. En désinstallant simplement l'application de votre appareil.
+Vous pouvez à tout moment révoquer les autorisations (notifications, statistiques d'utilisation, overlay) depuis les paramètres de votre appareil Android.
 
-## 6. Modifications de cette Politique de Confidentialité
+Vous pouvez supprimer toutes vos données enregistrées en effaçant les données de l'application ou en la désinstallant.
 
-Nous pouvons mettre à jour notre politique de confidentialité de temps à autre pour refléter l'ajout de nouvelles fonctionnalités. Nous vous conseillons de consulter cette page régulièrement. Les modifications entrent en vigueur dès leur publication sur cette page.
+5. Modifications de cette politique
+Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette même page avec une date de mise à jour révisée.
 
-## 7. Nous Contacter
-
-Si vous avez des questions, des inquiétudes ou des suggestions concernant notre politique de confidentialité ou le fonctionnement de l'application, n'hésitez pas à nous contacter directement à l'adresse e-mail de support technique : **naudclick.informatik@gmail.com**.
+6. Contact
+Pour toute question, réclamation ou demande concernant cette politique de confidentialité, vous pouvez nous contacter par e-mail à l'adresse suivante :
+📧 Naudclick.informatik@gmail.com
